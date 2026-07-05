@@ -4,7 +4,7 @@ A simple, lightweight, and secure Expense Tracker web application built with **N
 
 ## 🔗 Live Demo
 You can view the live demo here:  
-👉 **[Live Demo Link](YOUR_LIVE_DEMO_LINK_HERE)**
+👉 **[Live Demo Link](https://expense-tracker-l5tr.onrender.com/)**
 
 ---
 
