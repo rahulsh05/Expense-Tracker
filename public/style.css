@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Auth Screen ---------- */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.auth-card {
+  background: #1e293b;
+  padding: 32px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.auth-tabs {
+  display: flex;
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-tab-btn.active {
+  background: #6366f1;
+  color: white;
+}
+
+.auth-form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form.active {
+  display: flex;
+}
+
+.auth-form input {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.auth-form button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.auth-form button:hover {
+  background: #4f46e5;
+}
+
+.error-text {
+  color: #f87171;
+  font-size: 13px;
+  min-height: 16px;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dash-header h1 {
+  font-size: 22px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#logoutBtn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#logoutBtn:hover {
+  background: #dc2626;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 700px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+#expenseForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#expenseForm label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: -4px;
+}
+
+#expenseForm input,
+#expenseForm select {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#expenseForm button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+#expenseForm button:hover {
+  background: #4f46e5;
+}
+
+.grand-total {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #a5b4fc;
+  font-weight: 600;
+}
+
+.list-card {
+  margin-top: 4px;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+}
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.expense-category {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.expense-meta {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.expense-amount {
+  font-weight: 700;
+  color: #f87171;
+  margin-right: 12px;
+}
+
+.expense-right {
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.empty-text {
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}

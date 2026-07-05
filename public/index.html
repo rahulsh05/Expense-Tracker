@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ---------- Auth Screen ---------- -->
+  <div id="authScreen" class="auth-wrapper">
+    <div class="auth-card">
+      <h1>💰 Expense Tracker</h1>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" data-form="loginForm">Login</button>
+        <button class="auth-tab-btn" data-form="signupForm">Sign Up</button>
+      </div>
+
+      <form id="loginForm" class="auth-form active">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p class="error-text" id="loginError"></p>
+      </form>
+
+      <form id="signupForm" class="auth-form">
+        <input type="text" id="signupName" placeholder="Full Name" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required />
+        <button type="submit">Create Account</button>
+        <p class="error-text" id="signupError"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ---------- Dashboard Screen ---------- -->
+  <div id="dashboardScreen" class="dashboard hidden">
+    <header class="dash-header">
+      <h1>💰 Expense Tracker</h1>
+      <div class="user-info">
+        <span id="userName"></span>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <div class="dash-grid">
+      <!-- Add Expense Form -->
+      <div class="card">
+        <h2>Add Expense</h2>
+        <form id="expenseForm">
+          <label>Amount (₹)</label>
+          <input type="number" id="amount" min="1" step="0.01" required />
+
+          <label>Category</label>
+          <select id="category" required>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Rent">Rent</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Bills">Bills</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label>Date</label>
+          <input type="date" id="date" required />
+
+          <label>Note (optional)</label>
+          <input type="text" id="note" placeholder="e.g. Groceries from D-Mart" />
+
+          <button type="submit">Add Expense</button>
+        </form>
+      </div>
+
+      <!-- Summary -->
+      <div class="card">
+        <h2>Summary</h2>
+        <p class="grand-total">Total Spent: ₹<span id="grandTotal">0</span></p>
+        <canvas id="summaryChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <!-- Expense List -->
+    <div class="card list-card">
+      <h2>Your Expenses</h2>
+      <div id="expenseList" class="expense-list"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
